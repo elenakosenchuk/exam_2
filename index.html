@@ -192,7 +192,7 @@
                             </div>
                         </li>
 
-                        <!-- <li class="card_news">
+                        <li class="card_news">
                             <div class="news_pic"><img data-src="assets/images/news-1.jpg" alt="News picture"></div>
                             <div class="news_content">
                                 <h1>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h1>
@@ -224,22 +224,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="card_news">
-                            <div class="news_pic"><img data-src="assets/images/news-3.jpg" alt="News picture"></div>
-                            <div class="news_content">
-                                <h1>HYPNOTIZE YOURSELF INTO THE GHOST.</h1>
-                                <p>There are many things that are important to catalog design...
-                                </p>
-                                <div class="author">
-                                    <div class="avatar"><img data-src="assets/images/avatar-3.png" alt="Authors avatar">
-                                    </div>
-                                    <div class="about_author">
-                                        <h5>ALICE WARD</h5>
-                                        <p><time datetime="2019-11-30"></time>30 Nov 2019</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li> -->
+
                     </ul>
                 </div>
             </div>
@@ -252,33 +237,68 @@
 
     <script>
         $(function () {
-            let slider = $('#news_slider').lightSlider({
-                item: 3,
-                loop: true,
-                autoWidth: true,
-                slideMargin: 30,
-                onSliderLoad: function (el) {
-                    var showActiveSlides = function (entries) {
-                        entries.forEach(function (entry) {
-                            if (entry.isIntersecting) {
-                                entry.target.src = entry.target.dataset.src;
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    };
-
-                    var imageWidth = el.find("li").outerWidth() + "px";
-
-                    var observer = new window.IntersectionObserver(showActiveSlides, {
-                        root: el.parent()[0],
-                        rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+            let cardDate = new Date().toJSON().split("T")[0];
+            $.ajax({
+                url: `https://newsapi.org/v2/everything?q=design&from=${cardDate}&sortBy=publishedAt&apiKey=9dfa933d5de94e3aba63d4ab62125832`,
+                type: 'get',
+                dataType: 'json',
+                success: function (json) {
+                    let html = '';
+                    json.articles.forEach((news) => {
+                        let newsData = new Date(news.publishedAt);
+                        html += `<li class="card_news">
+                            <div class="news_pic">
+                                <img data-src="${news.urlToImage}" alt="News picture"></div>
+                            <div class="news_content">
+                                <h1>${news.title}</h1>
+                                <p>${news.description}</p>
+                                <div class="author">
+                                    <div class="avatar"><img data-src="assets/images/avatar-3.png" alt="Authors avatar">
+                                    </div>
+                                    <div class="about_author">
+                                        <h5>${news.author}</h5>
+                                        <p><time datetime="${news.publishedAt.replace('T', ' ')}"></time>${newsData}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`;
                     });
+                    $("#news_slider").html(html);
+                    let slider = $('#news_slider').lightSlider({
+                        item: 3,
+                        loop: true,
+                        autoWidth: true,
+                        slideMargin: 30,
+                        onSliderLoad: function (el) {
+                            var showActiveSlides = function (entries) {
+                                entries.forEach(function (entry) {
+                                    if (entry.isIntersecting) {
+                                        entry.target.src = entry.target
+                                            .dataset.src;
+                                        observer.unobserve(entry.target);
+                                    }
+                                });
+                            };
 
-                    el.find("li img").each(function () {
-                        observer.observe(this);
+                            var imageWidth = el.find("li").outerWidth() + "px";
+
+                            var observer = new window.IntersectionObserver(
+                                showActiveSlides, {
+                                    root: el.parent()[0],
+                                    rootMargin: "0px " + imageWidth + " 0px " +
+                                        imageWidth
+                                });
+
+                            el.find("li img").each(function () {
+                                observer.observe(this);
+                            });
+                        }
                     });
                 }
             });
+
+
+
         });
     </script>
 </body>
