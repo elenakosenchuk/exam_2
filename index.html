@@ -19,7 +19,7 @@
     <!-- <div id="mobile_menu_wrap">
             <div class="sidemenu_top">
                 <div class="mobile_logo">
-                    <a href="#home"><img src="assets/images/logo.png" alt="Site Logo"></a>
+                    <a href="#home_slider"><img src="assets/images/logo.png" alt="Site Logo"></a>
                 </div>
                 <button class="hamburger hamburger--slider" type="button">
                     <span class="hamburger-box">
@@ -29,7 +29,7 @@
             </div>
             <nav class="sidemenu">
                 <ul>
-                    <li><a href="#home">About us</a></li>
+                    <li><a href="#home_slider">About us</a></li>
                     <li><a href="#projects">projects</a></li>
                     <li><a href="#news">News</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -44,7 +44,7 @@
                 <div id="header_logo"><a href="#home"><img src="assets/images/logo.png" alt="Site Logo"></a></div>
                 <nav id="main_menu">
                     <ul>
-                        <li><a href="#home">About us</a></li>
+                        <li><a href="#home_slider">About us</a></li>
                         <li><a href="#projects">projects</a></li>
                         <li><a href="#news">News</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -83,20 +83,97 @@
                             </button>
                         </div> -->
             </div>
-            <div class="header_content">
-                <h2>SIMPLE & MODERN</h2>
-                <div class="subtext">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</div>
-            </div>
-
-            <div class="down_arrow">
-                <svg>
-                    <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
-                </svg>
-            </div>
         </div>
     </header>
 
     <main>
+        <ul id="header_slider">
+            <li>
+                <div class="home_section slide1">
+                    <div class="container">
+                        <div class="header_content">
+                            <h2>SIMPLE & MODERN</h2>
+                            <div class="subtext">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</div>
+                        </div>
+
+                        <div class="down_arrow">
+                            <svg>
+                                <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="home_section slide2">
+                    <div class="container">
+                        <div class="header_content">
+                            <h2>Slick & Slide</h2>
+                            <div class="subtext">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                        </div>
+
+                        <div class="down_arrow">
+                            <svg>
+                                <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="home_section slide3">
+                    <div class="container">
+                        <div class="header_content">
+                            <h2>Funny & Runny</h2>
+                            <div class="subtext">Make yout life comfortable and safety</div>
+                        </div>
+
+                        <div class="down_arrow">
+                            <svg>
+                                <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                <div class="home_section slide4">
+                    <div class="container">
+                        <div class="header_content">
+                            <h2>SIMPLE & MODERN</h2>
+                            <div class="subtext">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</div>
+                        </div>
+
+                        <div class="down_arrow">
+                            <svg>
+                                <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="home_section slide5">
+                    <div class="container">
+                        <div class="header_content">
+                            <h2>Slick & Slide</h2>
+                            <div class="subtext">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                        </div>
+
+                        <div class="down_arrow">
+                            <svg>
+                                <use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </li> -->
+        </ul>
+
+
+
         <section id="projects">
             <div class="container projects-container">
                 <div class="title">
@@ -143,18 +220,21 @@
                 </div>
                 <div class="slider_wrap">
                     <ul id="news_slider">
-                        <!-- <li class="card_news">
-                            <div class="news_pic"><img data-src="assets/images/news-1.jpg" alt="News picture"></div>
-                            <div class="news_content">
-                                <h3>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
-                                <p>Free directories: directories are perfect for customers that are searching for...
-                                </p>
-                                <div class="author">
-                                    <div class="avatar"><img data-src="assets/images/avatar-1.png" alt="Authors avatar">
-                                    </div>
-                                    <div class="about_author">
-                                        <h5>ALJA BRUN</h5>
-                                        <p><time datetime="2020-01-20"></time>20 Jan 2020</p>
+                        <li>
+                            <div class="card_news">
+                                <div class="news_pic"><img data-src="assets/images/news-1.jpg" alt="News picture"></div>
+                                <div class="news_content">
+                                    <h3>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
+                                    <p>Free directories: directories are perfect for customers that are searching for...
+                                    </p>
+                                    <div class="author">
+                                        <div class="avatar"><img data-src="assets/images/avatar-1.png"
+                                                alt="Authors avatar">
+                                        </div>
+                                        <div class="about_author">
+                                            <h5>ALJA BRUN</h5>
+                                            <p><time datetime="2020-01-20"></time>20 Jan 2020</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +242,7 @@
                                 <a href="https://html5book.ru/dizayn-kartochek-tovara/" class="news_link"
                                     target="_blank"></a>
                             </div>
-                        </li>                     -->
+                        </li>
                     </ul>
                     <button type="button" class="prev slide_arrow">
                         <svg>
@@ -284,16 +364,16 @@
 
     <script>
         $(function () {
-            let currentDate = new Date().toJSON().split("T")[0];
             $.ajax({
-                url: `https://newsapi.org/v2/everything?q=design&from=${currentDate}&sortBy=publishedAt&apiKey=9dfa933d5de94e3aba63d4ab62125832`,
+                url: `https://saurav.tech/NewsAPI/top-headlines/category/health/in.json`,
                 type: 'get',
                 dataType: 'json',
                 success: function (json) {
                     let html = '';
-                    json.articles.forEach((news) => {
+                    json.articles.forEach((news, i) => {
                         let newsData = (new Date(news.publishedAt) + "").split(' ');
-                        html += `<li class="card_news">
+                        if (i < 10) {
+                            html += `<li class="card_news" data-i="${i}">
                             <div class="news_pic">
                                 <img data-src="${news.urlToImage}" alt="News picture"></div>
                             <div class="news_content">
@@ -313,6 +393,7 @@
                                     target="_blank"></a>
                             </div>
                         </li>`;
+                        }
                     });
                     $("#news_slider").html(html);
                     let slider = $('#news_slider').lightSlider({
@@ -320,9 +401,6 @@
                         loop: true,
                         autoWidth: true,
                         slideMargin: 30,
-                        auto: true,
-                        speed: 1000,
-                        pause: 2000,
                         controls: false,
                         onSliderLoad: function (el) {
                             var showActiveSlides = function (entries) {
@@ -349,14 +427,49 @@
                             });
                         }
                     });
+                    $(".prev").on('click', function () {
+                        slider.goToPrevSlide();
+                    });
+                    $(".next").on('click', function () {
+                        slider.goToNextSlide();
+                    });
                 }
 
             });
-            $(".prev").on('click', function () {
-                slider.goToPrevSlide();
-            });
-            $(".next").on('click', function () {
-                slider.goToNextSlide();
+
+
+            let headSlider = $('#header_slider').lightSlider({
+                item: 1,
+                loop: true,
+                autoWidth: true,
+                vertical: true,
+                verticalHeight: 800,
+                controls: false,
+                // controls: false,
+                onSliderLoad: function (el) {
+                    var showActiveSlides = function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.src = entry.target
+                                    .dataset.src;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    };
+
+                    var imageWidth = el.find("li").outerWidth() + "px";
+
+                    var observer = new window.IntersectionObserver(
+                        showActiveSlides, {
+                            root: el.parent()[0],
+                            rootMargin: "0px " + imageWidth + " 0px " +
+                                imageWidth
+                        });
+
+                    el.find("li img").each(function () {
+                        observer.observe(this);
+                    });
+                }
             });
 
             $("#init_map").on('click', function () {
