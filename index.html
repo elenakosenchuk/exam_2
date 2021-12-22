@@ -177,7 +177,10 @@
                 </div>
             </div>
         </section>
+
         <div class="site_map">
+            <a href="https://www.google.com.ua/maps/place/@40.6832933,-73.9085671,15z/" target="_blank"
+                id="to_google_map"></a>
             <div id="my_map">
                 <a href="javascript:void(0)" id="init_map">
                     <img src="assets/images/map_black.png" alt="Site map">
@@ -185,6 +188,93 @@
                 </a>
             </div>
         </div>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer_form">
+                    <div class="title">
+                        <h2>Get in touch</h2>
+                    </div>
+                    <form id="contact_form" action="#" method="post" target="_blank">
+                        <div class="contact-data">
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/sprite.svg#point_map"></use>
+                                        </svg>
+                                        <span>91 Nolan Extensions Suite 670</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:+0013568682454">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/sprite.svg#phone"></use>
+                                        </svg>
+                                        <span>+001 356-868-2454</span></a>
+                                </li>
+                                <li>
+                                    <a href="mailto:montichello@service.com">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/sprite.svg#mail"></use>
+                                        </svg>
+                                        <span>montichello@service.com</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/sprite.svg#clock"></use>
+                                        </svg>
+                                        <span>From 07:05AM to 19:30PM</span></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="submit_form">
+                            <ul class="contact-list">
+                                <li class="contact-list__item"><input class="contact-list_textarea" type="text"
+                                        name="name" value="" placeholder="Your name..."></li>
+                                <li class="contact-list__item"><input class="contact-list_textarea" type="email"
+                                        name="email" value="" placeholder="Email"></li>
+                            </ul>
+                            <button class="btn_white" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="footer_content">
+                    <div class="logo_content">
+                        <div id="footer_logo"><a href="#home"><img src="assets/images/logo.png" alt="Site Logo"></a>
+                        </div>
+                        <p>Copyrights &copy; 2020 Montichello</p>
+                    </div>
+                    <div class="networks">
+                        <ul class="networks_list">
+                            <li class="networks_list-item">
+                                <a href="#" target="_blank" rel="nofollow">
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/sprite.svg#facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="networks_list-item">
+                                <a href="#" target="_blank" rel="nofollow">
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/sprite.svg#twitter"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="networks_list-item">
+                                <a href="#" target="_blank" rel="nofollow">
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/sprite.svg#insta"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <script src="assets/js/lazyload.js"></script>
@@ -269,36 +359,39 @@
                 slider.goToNextSlide();
             });
 
+            $("#init_map").on('click', function () {
+                $(this).remove();
+                var map = L.map('my_map').setView([40.677710417735064, -73.90687103011915], 15);
 
-            var map = L.map('my_map').setView([40.64574383763862, -74.17124905527368], 17);
+                L.tileLayer(
+                    'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
 
-            L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+                var myIcon = L.icon({
+                    iconUrl: 'assets/plugins/leaflet/images/pin.png',
+                    iconSize: [106, 106],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [41, -31]
+                });
 
-            var myIcon = L.icon({
-                iconUrl: 'assets/plugins/leaflet/images/pin.png',
-                iconSize: [106, 106],
-                iconAnchor: [12, 41],
-                popupAnchor: [0, -41]
+                const marker = L.marker([40.677710417735064, -73.90687103011915], {
+                        icon: myIcon
+                    }).addTo(map)
+                    .bindPopup(`
+                <div class="map_popup">
+                    <img src="assets/images/avatar-3.png" alt="Popup avatar">
+                    <div class="map_info">          
+                        <span>I am here</span>
+                    </div>
+                </div>
+            `);
+
+                marker.on('click', function () {
+                    document.getElementById('to_google_map').click();
+                })
+
             });
-
-            const marker = L.marker([40.64574383763862, -74.17124905527368], {
-                    icon: myIcon
-                }).addTo(map)
-                .bindPopup(`
-                    <div class="map_popup">
-                        <img src="assets/images/avatar-3.png" alt="">
-                        <div class="map_info">          
-                        <p>I am here</p>
-                        </div>
-                    </div>`);
-
-            marker.on('click', function () {
-                document.getElementById('to_google_map').click();
-                // window.location.href = 'https://www.google.com.ua/maps/place/@46.959136,31.9769152,17z';
-            })
-
         });
     </script>
 </body>
