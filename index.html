@@ -8,7 +8,7 @@
     <title>Document</title>
 
 
-
+    <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/plugins/light/css/lightslider.min.css">
@@ -142,11 +142,6 @@
                     <h2>Latest news</h2>
                 </div>
                 <div class="slider_wrap">
-                    <div class="left_arrow">
-                        <svg>
-                            <use xlink:href="assets/images/icons/sprite.svg#arrow_left"></use>
-                        </svg>
-                    </div>
                     <ul id="news_slider">
                         <!-- <li class="card_news">
                             <div class="news_pic"><img data-src="assets/images/news-1.jpg" alt="News picture"></div>
@@ -167,22 +162,35 @@
                                 <a href="https://html5book.ru/dizayn-kartochek-tovara/" class="news_link"
                                     target="_blank"></a>
                             </div>
-                        </li>                       -->
-
+                        </li>                     -->
                     </ul>
-                    <div class="right_arrow">
+                    <button type="button" class="prev slide_arrow">
+                        <svg>
+                            <use xlink:href="assets/images/icons/sprite.svg#arrow_left"></use>
+                        </svg>
+                    </button>
+                    <button type="button" class="next slide_arrow">
                         <svg>
                             <use xlink:href="assets/images/icons/sprite.svg#arrow_right"></use>
                         </svg>
-                    </div>
+                    </button>
                 </div>
             </div>
         </section>
+        <div class="site_map">
+            <div id="my_map">
+                <a href="javascript:void(0)" id="init_map">
+                    <img src="assets/images/map_black.png" alt="Site map">
+                    <p>Click to interactive</p>
+                </a>
+            </div>
+        </div>
     </main>
 
     <script src="assets/js/lazyload.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/plugins/light/js/lightslider.min.js"></script>
+    <script src="assets/plugins/leaflet/leaflet.js"></script>
 
     <script>
         $(function () {
@@ -222,6 +230,10 @@
                         loop: true,
                         autoWidth: true,
                         slideMargin: 30,
+                        auto: true,
+                        speed: 1000,
+                        pause: 2000,
+                        controls: false,
                         onSliderLoad: function (el) {
                             var showActiveSlides = function (entries) {
                                 entries.forEach(function (entry) {
@@ -248,9 +260,44 @@
                         }
                     });
                 }
+
+            });
+            $(".prev").on('click', function () {
+                slider.goToPrevSlide();
+            });
+            $(".next").on('click', function () {
+                slider.goToNextSlide();
             });
 
 
+            var map = L.map('my_map').setView([40.64574383763862, -74.17124905527368], 17);
+
+            L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var myIcon = L.icon({
+                iconUrl: 'assets/plugins/leaflet/images/pin.png',
+                iconSize: [106, 106],
+                iconAnchor: [12, 41],
+                popupAnchor: [0, -41]
+            });
+
+            const marker = L.marker([40.64574383763862, -74.17124905527368], {
+                    icon: myIcon
+                }).addTo(map)
+                .bindPopup(`
+                    <div class="map_popup">
+                        <img src="assets/images/avatar-3.png" alt="">
+                        <div class="map_info">          
+                        <p>I am here</p>
+                        </div>
+                    </div>`);
+
+            marker.on('click', function () {
+                document.getElementById('to_google_map').click();
+                // window.location.href = 'https://www.google.com.ua/maps/place/@46.959136,31.9769152,17z';
+            })
 
         });
     </script>
