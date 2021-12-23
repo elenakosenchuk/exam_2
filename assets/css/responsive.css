@@ -1,0 +1,9 @@
+@media screen and (max-width: 810px) {
+  #main_menu {
+    display: none;
+  }
+
+  #hamburger_menu {
+    display: block;
+  }
+}
