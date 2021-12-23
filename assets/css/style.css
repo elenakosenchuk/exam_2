@@ -201,9 +201,10 @@ img {
   height: 2px;
   border: 1px solid #fff;
 }
-#home .header-container.scrolled {
-  height: 100px;
-  background-color: rgba(126, 90, 255, 0.8) 16.9%;
+#home.scrolled {
+  height: 120px;
+  padding-top: 30px;
+  background-color: rgba(126, 90, 255, 0.7);
   box-shadow: 0 0 5px #999;
   backdrop-filter: blur(3px);
 }
@@ -342,7 +343,7 @@ img {
   margin-bottom: 240px;
 }
 .header_slider_wrapper .down {
-  top: 80%;
+  top: 85%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -705,7 +706,7 @@ img {
   top: -300px;
   transform: translate(-50%);
   color: #2C4058;
-  padding: 35px 35px 70px;
+  padding: 60px 35px 70px;
 }
 #footer .container .footer_form .title:before {
   content: "";
@@ -713,11 +714,63 @@ img {
   width: 15%;
   height: 30px;
   border-top: 1px solid #2C4058;
-  left: 45%;
+  left: 43%;
 }
 #footer .container .footer_form #contact_form {
   display: flex;
   justify-content: space-between;
+  font-size: 1.125rem;
+  line-height: 28px;
+  font-weight: 400;
+}
+#footer .container .footer_form #contact_form .contact-data {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#footer .container .footer_form #contact_form .contact-data li {
+  margin-bottom: 30px;
+}
+#footer .container .footer_form #contact_form .contact-data li .data_link:hover span {
+  color: #000;
+  font-size: 1.1875rem;
+}
+#footer .container .footer_form #contact_form .contact-data li .data_link:hover svg {
+  width: 23px;
+  height: 23px;
+}
+#footer .container .footer_form #contact_form .contact-data svg {
+  vertical-align: middle;
+  color: #7E5AFF;
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+#footer .container .footer_form #contact_form .contact-data span {
+  color: #2C4058;
+}
+#footer .container .footer_form #contact_form #submit_form .contact-list__item {
+  width: 310px;
+  height: 41px;
+  margin-bottom: 30px;
+}
+#footer .container .footer_form #contact_form #submit_form .contact-list__item .contact-list_textarea {
+  color: #4B5562;
+  font-size: 1.125rem;
+  line-height: 28px;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  border: transparent;
+  border-bottom: 1px solid rgba(44, 64, 88, 0.3);
+}
+#footer .container .footer_form #contact_form #submit_form .contact-list__item .contact-list_textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #2c4058;
+  color: #000;
+}
+#footer .container .footer_form #contact_form #submit_form .form_btn {
+  display: block;
+  width: 140px;
+  margin-left: auto;
 }
 #footer .container .footer_content {
   width: 770px;

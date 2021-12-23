@@ -18,39 +18,39 @@
 </head>
 
 <body>
-
-    <!-- <div id="mobile_menu_wrap">
-            <div class="sidemenu_top">
-                <div class="mobile_logo">
-                    <a href="#home_slider"><img src="assets/images/logo.png" alt="Site Logo"></a>
-                </div>
-                <button class="hamburger hamburger--slider" type="button">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
+    <div id="mobile_menu_wrap">
+        <div class="sidemenu_top">
+            <div class="mobile_logo">
+                <a href="#main_page"><img src="assets/images/logo.png" alt="Site Logo"></a>
             </div>
-            <nav class="sidemenu">
-                <ul>
-                    <li><a href="#home_slider">About us</a></li>
-                    <li><a href="#projects">projects</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <button class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
         </div>
-        <div id="page_overlay"></div> -->
+        <nav class="sidemenu">
+            <ul>
+                <li><a href="#main_page">About us</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="page_overlay"></div>
 
     <header id="home">
         <div class="container header-container">
             <div class="header_navigation">
-                <div id="header_logo"><a href="#home"><img src="assets/images/logo.png" alt="Site Logo"></a></div>
+                <div id="header_logo"><a href="#main_page"><img src="assets/images/logo.png" alt="Site Logo"></a>
+                </div>
                 <nav id="main_menu">
                     <ul>
-                        <li><a href="#home_slider">About us</a></li>
+                        <li><a href="#main_page">About us</a></li>
                         <li><a href="#projects">projects</a></li>
                         <li><a href="#news">News</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#footer">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="networks">
@@ -78,19 +78,20 @@
                         </li>
                     </ul>
                 </div>
-                <!-- <div id="hamburger_menu">
-                            <button class="hamburger hamburger--slider" type="button">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
-                            </button>
-                        </div> -->
+
+                <div id="hamburger_menu">
+                    <button class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="header_slider_wrapper">
+        <div id="main_page" class="header_slider_wrapper">
             <ul id="header_slider">
                 <li>
                     <div class="home_section slide1">
@@ -290,7 +291,8 @@
                     <div class="contact-data">
                         <ul>
                             <li>
-                                <a href="#" target="_blank">
+                                <a class="data_link" href="https://www.google.com.ua/maps/@40.6832933,-73.9085671,15z"
+                                    target="_blank">
                                     <svg>
                                         <use xlink:href="assets/images/icons/sprite.svg#point_map"></use>
                                     </svg>
@@ -298,21 +300,21 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+0013568682454">
+                                <a class="data_link" href="tel:+0013568682454">
                                     <svg>
                                         <use xlink:href="assets/images/icons/sprite.svg#phone"></use>
                                     </svg>
                                     <span>+001 356-868-2454</span></a>
                             </li>
                             <li>
-                                <a href="mailto:montichello@service.com">
+                                <a class="data_link" href="mailto:montichello@service.com">
                                     <svg>
                                         <use xlink:href="assets/images/icons/sprite.svg#mail"></use>
                                     </svg>
                                     <span>montichello@service.com</span></a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a class="data_link" href="#">
                                     <svg>
                                         <use xlink:href="assets/images/icons/sprite.svg#clock"></use>
                                     </svg>
@@ -321,20 +323,20 @@
 
                         </ul>
                     </div>
-                    <div class="submit_form">
+                    <div id="submit_form">
                         <ul class="contact-list">
-                            <li class="contact-list__item"><input class="contact-list_textarea" type="text" name="name"
-                                    value="" placeholder="Your name..."></li>
-                            <li class="contact-list__item"><input class="contact-list_textarea" type="email"
-                                    name="email" value="" placeholder="Email"></li>
+                            <li class="contact-list__item"><input id="inputName" class="contact-list_textarea"
+                                    type="text" name="name" value="" placeholder="Your name..."></li>
+                            <li class="contact-list__item"><input id="inputEmail" class="contact-list_textarea"
+                                    type="email" name="email" value="" placeholder="Email"></li>
                         </ul>
-                        <button class="btn_white" type="submit">Submit</button>
+                        <button class="btn_white form_btn" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
             <div class="footer_content">
                 <div class="logo_content">
-                    <div id="footer_logo"><a href="#home"><img src="assets/images/logo.png" alt="Site Logo"></a>
+                    <div id="footer_logo"><a href="#main_page"><img src="assets/images/logo.png" alt="Site Logo"></a>
                     </div>
                     <p>Copyrights &copy; 2020 Montichello</p>
                 </div>
@@ -378,6 +380,32 @@
 
     <script>
         $(function () {
+            $(".hamburger, #page_overlay").on('click', function () {
+                $(".hamburger").toggleClass("is-active");
+                $("body").toggleClass("open");
+            });
+
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() > 0) {
+                    if (!$("header").hasClass("scrolled")) {
+                        $("header").addClass("scrolled");
+                    }
+                } else {
+                    if ($("header").hasClass("scrolled")) {
+                        $("header").removeClass("scrolled");
+                    }
+                }
+            });
+
+
+            $("#main_menu a").on('click', function (e) {
+                e.preventDefault();
+                const top = $($(this).attr("href")).offset().top - 60;
+                $("html, body").animate({
+                    scrollTop: top + 'px'
+                }, 500);
+            });
+
             $.ajax({
                 url: `https://saurav.tech/NewsAPI/top-headlines/category/health/in.json`,
                 type: 'get',
@@ -464,14 +492,12 @@
 
             });
 
-
             let headSlider = $('#header_slider').lightSlider({
                 item: 1,
                 loop: true,
                 vertical: true,
                 verticalHeight: 800,
                 controls: false,
-                // pager: false,
                 currentPagerPosition: 'right',
                 onSliderLoad: function (el) {
                     var showActiveSlides = function (entries) {
@@ -502,8 +528,6 @@
             lightGallery(document.getElementById('animated-thumbnails-gallery'), {
                 thumbnail: true,
             });
-
-
 
             $("#init_map").on('click', function () {
                 $(this).remove();
@@ -537,6 +561,28 @@
                     document.getElementById('to_google_map').click();
                 })
 
+            });
+
+            $("#contact_form").on('submit', function (e) {
+                e.preventDefault();
+                // console.log("SEND FORM!");
+                const BOT_TOKEN = '5060479505:AAE5--JEDUqjudIJcP82clFnIAf1HMRrjA4';
+                // @get_id_bot and /get_id
+                const CHAT_ID = '-1001765759474';
+                let text = encodeURI("<b>Name:</b> " + $("#inputName").val() +
+                    "\n<b>Email:</b> " + $("#inputEmail").val()
+                );
+
+                $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=` +
+                    text +
+                    '&parse_mode=html', (json) => {
+                        if (json.ok) {
+                            $("#contact_form").trigger('reset');
+                            alert("Message successfully send");
+                        } else {
+                            alert(json.description);
+                        }
+                    });
             });
         });
     </script>
