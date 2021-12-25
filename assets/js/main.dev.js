@@ -85,20 +85,25 @@ $(function () {
         loop: true,
         slideMargin: 30,
         controls: false,
-        // responsive: [{
-        //         breakpoint: 800,
-        //         settings: {
-        //             item: 3,
-        //             slideMargin: 6,
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 480,
-        //         settings: {
-        //             item: 2,
-        //         }
-        //     }
-        // ],
+        responsive: [{
+          breakpoint: 1100,
+          settings: {
+            item: 3,
+            slideMargin: 20
+          }
+        }, {
+          breakpoint: 990,
+          settings: {
+            item: 2,
+            slideMargin: 20
+          }
+        }, {
+          breakpoint: 700,
+          settings: {
+            item: 1,
+            slideMargin: 20
+          }
+        }],
         onSliderLoad: function onSliderLoad(el) {
           var showActiveSlides = function showActiveSlides(entries) {
             entries.forEach(function (entry) {
@@ -133,6 +138,9 @@ $(function () {
     vertical: true,
     verticalHeight: 800,
     controls: false,
+    auto: true,
+    speed: 1000,
+    pause: 2000,
     currentPagerPosition: 'right',
     onSliderLoad: function onSliderLoad(el) {
       var showActiveSlides = function showActiveSlides(entries) {
@@ -155,7 +163,17 @@ $(function () {
     }
   });
   lightGallery(document.getElementById('animated-thumbnails-gallery'), {
-    thumbnail: true
+    thumbnail: true,
+    autoplayFirstVideo: false,
+    pager: false,
+    galleryId: "nature",
+    plugins: [lgZoom, lgThumbnail],
+    mobileSettings: {
+      controls: false,
+      showCloseIcon: false,
+      download: false,
+      rotate: false
+    }
   });
   $("#init_map").on('click', function () {
     $(this).remove();

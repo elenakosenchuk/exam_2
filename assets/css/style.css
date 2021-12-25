@@ -366,14 +366,11 @@ img {
   position: fixed;
   top: 0;
   left: -500px;
-  background-color: #FFE4B5;
+  background: linear-gradient(243.43deg, rgba(126, 90, 255, 0.8) 16.9%, rgba(85, 183, 255, 0.8) 83.27%);
   height: 100vh;
   width: 100%;
   max-width: 400px;
-  -webkit-box-shadow: 0 0 10px #000;
   box-shadow: 0 0 10px #000;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
   z-index: 1000;
 }
@@ -395,10 +392,11 @@ img {
   -ms-flex-pack: justify;
   justify-content: space-between;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .sidemenu li {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #fff;
 }
 .sidemenu li a {
   display: inline-block;
@@ -407,7 +405,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   width: 100%;
-  color: #708090;
+  color: #fff;
 }
 
 .open #page_overlay {
@@ -417,6 +415,7 @@ img {
   left: 0;
 }
 .open #hamburger--slider .hamburger-inner {
+  background-color: #fff;
   -webkit-transform: translate3d(0, 10px, 0) rotate(45deg);
   transform: translate3d(0, 10px, 0) rotate(45deg);
 }
@@ -426,21 +425,28 @@ img {
   opacity: 0;
 }
 .open #hamburger--slider .hamburger-inner::after {
-  -webkit-transform: translate3d(0, -20px, 0) rotate(-90deg);
   transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::after, .hamburger.is-active .hamburger-inner::before {
+  background-color: #fff;
 }
 
 .header_slider_wrapper {
   position: relative;
+  width: 100%;
 }
 .header_slider_wrapper .lSSlideOuter .lSPager.lSpg {
-  margin: 10px 0 0;
+  margin: 0 40px;
   padding: 0;
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 30%;
   right: 0;
-  transform: rotateZ(90deg) !important;
+}
+.header_slider_wrapper .lSSlideOuter .lSPager.lSpg > li {
+  display: block;
+  padding: 10px 5px;
 }
 .header_slider_wrapper .home_section {
   width: 100%;
@@ -458,6 +464,7 @@ img {
   flex-direction: column;
   align-items: center;
   align-content: space-between;
+  text-align: center;
 }
 .header_slider_wrapper .home_section .header_content h2 {
   font-size: 5rem;
@@ -509,13 +516,11 @@ img {
   margin-bottom: 140px;
 }
 #projects .projects-container .first_project .project_img {
-  width: 630px;
-  height: 470px;
+  width: 58%;
   box-shadow: -215px -57px 0 0 #55B7FF;
 }
 #projects .projects-container .first_project .project_content {
-  width: 470px;
-  height: 350px;
+  width: 42%;
 }
 #projects .projects-container .first_project .project_content .subtitle {
   font-size: 1.375rem;
@@ -552,13 +557,12 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 65px;
+  gap: 60px;
   align-items: center;
   margin-bottom: 140px;
 }
 #projects .projects-container .second_project .project_content {
-  width: 476px;
-  height: 350px;
+  width: 43%;
 }
 #projects .projects-container .second_project .project_content .subtitle {
   font-size: 1.375rem;
@@ -592,9 +596,11 @@ img {
   height: 17px;
 }
 #projects .projects-container .second_project .project_img {
-  width: 630px;
-  height: 470px;
+  width: 57%;
   box-shadow: 215px -57px 0 0 #7E5AFF;
+}
+#projects .projects-container .second_project .project_img img {
+  object-fit: fill;
 }
 
 #news {
@@ -637,7 +643,7 @@ img {
   width: 100%;
 }
 #news .news-container .slider_wrap #news_slider .card_news {
-  width: 100%;
+  width: calc(33.33% - 60px);
   height: 515px;
   position: relative;
   background-color: #fff;
@@ -724,10 +730,10 @@ img {
   opacity: 1;
 }
 #news .news-container .slider_wrap .prev {
-  left: -60px;
+  left: -80px;
 }
 #news .news-container .slider_wrap .next {
-  right: -60px;
+  right: -80px;
 }
 #news .news-container .slider_wrap .lSSlideOuter .lSPager {
   margin-top: 30px !important;
@@ -781,6 +787,14 @@ img {
 }
 #gallery .gallery-container .gallery_pic:hover:after {
   opacity: 1;
+}
+#gallery .gallery-container .gallery_pic svg {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 50;
 }
 #gallery .gallery_btn {
   margin: 0 auto;
@@ -836,6 +850,7 @@ img {
   transform: translate(-50%);
   color: #2C4058;
   padding: 60px 35px 70px;
+  z-index: 1000;
 }
 #footer .container .footer_form .title:before {
   content: "";
