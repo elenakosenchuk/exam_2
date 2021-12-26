@@ -1,8 +1,8 @@
 "use strict";
 
 function validateForm() {
-  var name = document.getElementById("inputName").value;
-  var email = document.getElementById("inputEmail").value;
+  var name = $("#inputName").val();
+  var email = $("#inputEmail").val();
   $("#inputName").removeClass('error');
   $("#inputEmail").removeClass('error');
 
@@ -164,7 +164,7 @@ $(function () {
       });
     }
   });
-  lightGallery(document.getElementById('animated-thumbnails-gallery'), {
+  lightGallery($('#animated-thumbnails-gallery')[0], {
     thumbnail: true,
     autoplayFirstVideo: false,
     pager: false,

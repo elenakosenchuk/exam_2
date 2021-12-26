@@ -3,14 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monticello</title>
+    <meta name="description" content="International building group">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" lang="en" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no" />
+
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#7e5aff">
+    <meta name="msapplication-TileColor" content="#7e5aff">
+    <meta name="theme-color" content="#7e5aff">
+
+
 
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/plugins/light/css/lightslider.min.css">
     <link rel="stylesheet" href="assets/plugins/lightGallery/dist/css/lightgallery-bundle.min.css">
-
     <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
@@ -206,7 +219,7 @@
                         <ul id="news_slider">
                             <li>
                                 <div class="card_news">
-                                    <div class="news_pic"><img
+                                    <div class="news_pic"><img class="lazy"
                                             src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                             data-src="assets/images/news-1.jpg" alt="News picture">
                                     </div>
@@ -216,7 +229,7 @@
                                             for...
                                         </p>
                                         <div class="author">
-                                            <div class="avatar"><img
+                                            <div class="avatar"><img class="lazy"
                                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                                     data-src="assets/images/avatar-1.png" alt="Authors avatar">
                                             </div>
@@ -296,7 +309,9 @@
                 id="to_google_map"></a>
             <div id="my_map">
                 <a href="javascript:void(0)" id="init_map">
-                    <img src="assets/images/map_black.png" alt="Site map">
+                    <img class="lazy"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="assets/images/map_black.png" alt="Site map">
                     <p>Click to interactive</p>
                 </a>
             </div>
@@ -304,95 +319,101 @@
     </main>
 
     <footer id="footer">
-        <div class="container">
-            <div class="footer_form">
-                <div class="title">
-                    <h2>Get in touch</h2>
+        <div class="footer_wrapper lazy-bg" data-src="assets/images/footer-bg.png">
+            <div class="container">
+                <div class="form_wrapper">
+                    <div class="footer_form lazy-bg" data-src="assets/images/form-bg.png">
+                        <div class="title">
+                            <h2>Get in touch</h2>
+                        </div>
+                        <form id="contact_form" action="#" method="post" target="_blank">
+                            <div class="contact-data">
+                                <ul>
+                                    <li>
+                                        <a class="data_link"
+                                            href="https://www.google.com.ua/maps/@40.6832933,-73.9085671,15z"
+                                            target="_blank">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/sprite.svg#point_map"></use>
+                                            </svg>
+                                            <span>91 Nolan Extensions Suite 670</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="data_link" href="tel:+0013568682454">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/sprite.svg#phone"></use>
+                                            </svg>
+                                            <span>+001 356-868-2454</span></a>
+                                    </li>
+                                    <li>
+                                        <a class="data_link" href="mailto:montichello@service.com">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/sprite.svg#mail"></use>
+                                            </svg>
+                                            <span>montichello@service.com</span></a>
+                                    </li>
+                                    <li>
+                                        <a class="data_link" href="#">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/sprite.svg#clock"></use>
+                                            </svg>
+                                            <span>From 07:05AM to 19:30PM</span></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div id="submit_form">
+                                <ul class="contact-list">
+                                    <li class="contact-list__item"><input id="inputName" class="contact-list_textarea"
+                                            type="text" name="name" value="" placeholder="Your name..."></li>
+                                    <li class="contact-list__item"><input id="inputEmail" class="contact-list_textarea"
+                                            type="email" name="email" value="" placeholder="Email"></li>
+                                </ul>
+                                <button class="btn_white form_btn" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <form id="contact_form" action="#" method="post" target="_blank">
-                    <div class="contact-data">
-                        <ul>
-                            <li>
-                                <a class="data_link" href="https://www.google.com.ua/maps/@40.6832933,-73.9085671,15z"
-                                    target="_blank">
+                <div class="footer_content">
+                    <div class="logo_content">
+                        <div id="footer_logo"><a href="#main_page"><img src="assets/images/logo.png"
+                                    alt="Site Logo"></a>
+                        </div>
+                        <p>Copyrights &copy; 2020 Montichello</p>
+                    </div>
+                    <div class="networks">
+                        <ul class="networks_list">
+                            <li class="networks_list-item">
+                                <a href="#" target="_blank" rel="nofollow">
                                     <svg>
-                                        <use xlink:href="assets/images/icons/sprite.svg#point_map"></use>
+                                        <use xlink:href="assets/images/icons/sprite.svg#facebook"></use>
                                     </svg>
-                                    <span>91 Nolan Extensions Suite 670</span>
                                 </a>
                             </li>
-                            <li>
-                                <a class="data_link" href="tel:+0013568682454">
+                            <li class="networks_list-item">
+                                <a href="#" target="_blank" rel="nofollow">
                                     <svg>
-                                        <use xlink:href="assets/images/icons/sprite.svg#phone"></use>
+                                        <use xlink:href="assets/images/icons/sprite.svg#twitter"></use>
                                     </svg>
-                                    <span>+001 356-868-2454</span></a>
+                                </a>
                             </li>
-                            <li>
-                                <a class="data_link" href="mailto:montichello@service.com">
+                            <li class="networks_list-item">
+                                <a href="#" target="_blank" rel="nofollow">
                                     <svg>
-                                        <use xlink:href="assets/images/icons/sprite.svg#mail"></use>
+                                        <use xlink:href="assets/images/icons/sprite.svg#insta"></use>
                                     </svg>
-                                    <span>montichello@service.com</span></a>
+                                </a>
                             </li>
-                            <li>
-                                <a class="data_link" href="#">
-                                    <svg>
-                                        <use xlink:href="assets/images/icons/sprite.svg#clock"></use>
-                                    </svg>
-                                    <span>From 07:05AM to 19:30PM</span></a>
-                            </li>
-
                         </ul>
                     </div>
-                    <div id="submit_form">
-                        <ul class="contact-list">
-                            <li class="contact-list__item"><input id="inputName" class="contact-list_textarea"
-                                    type="text" name="name" value="" placeholder="Your name..."></li>
-                            <li class="contact-list__item"><input id="inputEmail" class="contact-list_textarea"
-                                    type="email" name="email" value="" placeholder="Email"></li>
-                        </ul>
-                        <button class="btn_white form_btn" type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <div class="footer_content">
-                <div class="logo_content">
-                    <div id="footer_logo"><a href="#main_page"><img src="assets/images/logo.png" alt="Site Logo"></a>
-                    </div>
-                    <p>Copyrights &copy; 2020 Montichello</p>
-                </div>
-                <div class="networks">
-                    <ul class="networks_list">
-                        <li class="networks_list-item">
-                            <a href="#" target="_blank" rel="nofollow">
-                                <svg>
-                                    <use xlink:href="assets/images/icons/sprite.svg#facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="networks_list-item">
-                            <a href="#" target="_blank" rel="nofollow">
-                                <svg>
-                                    <use xlink:href="assets/images/icons/sprite.svg#twitter"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="networks_list-item">
-                            <a href="#" target="_blank" rel="nofollow">
-                                <svg>
-                                    <use xlink:href="assets/images/icons/sprite.svg#insta"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </footer>
 
 
-    <!-- <script src="assets/js/lazyload.js"></script> -->
+
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery.lazy.min.js"></script>
     <script src="assets/plugins/panel/panel.js"></script>

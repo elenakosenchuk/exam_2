@@ -1,6 +1,6 @@
 function validateForm() {
-    let name = document.getElementById("inputName").value;
-    let email = document.getElementById("inputEmail").value;
+    let name = $("#inputName").val();
+    let email = $("#inputEmail").val();
     $("#inputName").removeClass('error');
     $("#inputEmail").removeClass('error');
     if (name == "") {
@@ -23,7 +23,6 @@ function ValidateEmail(mail) {
 
 
 $(function () {
-
     $('.lazy').Lazy();
     $('.lazy-bg').Lazy();
     $("#inputName").on('focus', function () {
@@ -198,7 +197,7 @@ $(function () {
         }
     });
 
-    lightGallery(document.getElementById('animated-thumbnails-gallery'), {
+    lightGallery($('#animated-thumbnails-gallery')[0], {
         thumbnail: true,
         autoplayFirstVideo: false,
         pager: false,
