@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-
+    <title>Monticello</title>
 
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/plugins/light/css/lightslider.min.css">
@@ -96,7 +94,7 @@
         <div id="main_page" class="header_slider_wrapper">
             <ul id="header_slider">
                 <li>
-                    <div class="home_section slide1">
+                    <div class="home_section slide1 lazy-bg" data-src="assets/images/header-bg.png">
                         <div class="container">
                             <div class="header_content">
                                 <h2>SIMPLE & MODERN</h2>
@@ -107,7 +105,7 @@
                 </li>
 
                 <li>
-                    <div class="home_section slide2">
+                    <div class="home_section slide2 lazy-bg" data-src="assets/images/header-bg.png">
                         <div class="container">
                             <div class="header_content">
                                 <h2>Slick & Slide</h2>
@@ -118,7 +116,7 @@
                 </li>
 
                 <li>
-                    <div class="home_section slide3">
+                    <div class="home_section slide3 lazy-bg" data-src="assets/images/header-bg.png">
                         <div class="container">
                             <div class="header_content">
                                 <h2>Funny & Runny</h2>
@@ -128,7 +126,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="home_section slide4">
+                    <div class="home_section slide4 lazy-bg" data-src="assets/images/header-bg.png">
                         <div class="container">
                             <div class="header_content">
                                 <h2>SIMPLE & MODERN</h2>
@@ -138,7 +136,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="home_section slide5">
+                    <div class="home_section slide5 lazy-bg" data-src="assets/images/header-bg.png">
                         <div class="container">
                             <div class="header_content">
                                 <h2>Slick & Slide</h2>
@@ -161,7 +159,9 @@
                     <h2>WHAT WE DO</h2>
                 </div>
                 <div class="first_project">
-                    <div class="project_img"><img src="assets/images/proj_1.jpg" alt="Project picture"></div>
+                    <div class="project_img"><img class="lazy"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-src="assets/images/proj_1.jpg" alt="Project picture"></div>
                     <div class="project_content">
                         <div class="subtitle">ONE WORLD</div>
                         <h3>TRADE CENTER</h3>
@@ -189,52 +189,60 @@
                             Hong Kong - 1588 feet
                         </p>
                     </div>
-                    <div class="project_img"><img src="assets/images/proj_2.jpg" alt="Project picture"></div>
+                    <div class="project_img"><img class="lazy"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-src="assets/images/proj_2.jpg" alt="Project picture"></div>
                 </div>
             </div>
         </section>
 
         <section id="news">
-            <div class="container news-container">
-                <div class="title_white">
-                    <h2>Latest news</h2>
-                </div>
-                <div class="slider_wrap">
-                    <ul id="news_slider">
-                        <!-- <li>
-                            <div class="card_news">
-                                <div class="news_pic"><img data-src="assets/images/news-1.jpg" alt="News picture"></div>
-                                <div class="news_content">
-                                    <h3>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
-                                    <p>Free directories: directories are perfect for customers that are searching for...
-                                    </p>
-                                    <div class="author">
-                                        <div class="avatar"><img data-src="assets/images/avatar-1.png"
-                                                alt="Authors avatar">
-                                        </div>
-                                        <div class="about_author">
-                                            <h5>ALJA BRUN</h5>
-                                            <p><time datetime="2020-01-20"></time>20 Jan 2020</p>
+            <div class="news_wrapper lazy-bg" data-src="assets/images/news-bg.png">
+                <div class="container news-container">
+                    <div class="title_white">
+                        <h2>Latest news</h2>
+                    </div>
+                    <div class="slider_wrap">
+                        <ul id="news_slider">
+                            <li>
+                                <div class="card_news">
+                                    <div class="news_pic"><img
+                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="assets/images/news-1.jpg" alt="News picture">
+                                    </div>
+                                    <div class="news_content">
+                                        <h3>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
+                                        <p>Free directories: directories are perfect for customers that are searching
+                                            for...
+                                        </p>
+                                        <div class="author">
+                                            <div class="avatar"><img
+                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                    data-src="assets/images/avatar-1.png" alt="Authors avatar">
+                                            </div>
+                                            <div class="about_author">
+                                                <h5>ALJA BRUN</h5>
+                                                <p><time datetime="2020-01-20"></time>20 Jan 2020</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cover_news">
-                                <a href="https://html5book.ru/dizayn-kartochek-tovara/" class="news_link"
-                                    target="_blank"></a>
-                            </div>
-                        </li> -->
-                    </ul>
-                    <button type="button" class="prev slide_arrow">
-                        <svg>
-                            <use xlink:href="assets/images/icons/sprite.svg#arrow_left"></use>
-                        </svg>
-                    </button>
-                    <button type="button" class="next slide_arrow">
-                        <svg>
-                            <use xlink:href="assets/images/icons/sprite.svg#arrow_right"></use>
-                        </svg>
-                    </button>
+                                <div class="cover_news">
+                                    <a href="#" class="news_link" target="_blank"></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="button" class="prev slide_arrow">
+                            <svg>
+                                <use xlink:href="assets/images/icons/sprite.svg#arrow_left"></use>
+                            </svg>
+                        </button>
+                        <button type="button" class="next slide_arrow">
+                            <svg>
+                                <use xlink:href="assets/images/icons/sprite.svg#arrow_right"></use>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -247,31 +255,31 @@
 
                 <div class="gallery-container" id="animated-thumbnails-gallery">
                     <a href="assets/images/gallery-1.jpg" class="big_pic gallery_pic">
-                        <img src="assets/images/gallery-1.jpg" />
+                        <img src="assets/images/gallery-1.jpg" alt="gallery picture">
                         <svg>
                             <use xlink:href="assets/images/icons/sprite.svg#add_circle"></use>
                         </svg>
                     </a>
                     <a href="assets/images/gallery-2.jpg" class="gallery_pic">
-                        <img src="assets/images/gallery-2.jpg" />
+                        <img src="assets/images/gallery-2.jpg" alt="gallery picture">
                         <svg>
                             <use xlink:href="assets/images/icons/sprite.svg#add_circle"></use>
                         </svg>
                     </a>
                     <a href="assets/images/gallery-3.jpg" class="gallery_pic">
-                        <img src="assets/images/gallery-3.jpg" />
+                        <img src="assets/images/gallery-3.jpg" alt="gallery picture">
                         <svg>
                             <use xlink:href="assets/images/icons/sprite.svg#add_circle"></use>
                         </svg>
                     </a>
                     <a href="assets/images/gallery-4.jpg" class="gallery_pic">
-                        <img src="assets/images/gallery-4.jpg" />
+                        <img src="assets/images/gallery-4.jpg" alt="gallery picture">
                         <svg>
                             <use xlink:href="assets/images/icons/sprite.svg#add_circle"></use>
                         </svg>
                     </a>
                     <a href="assets/images/gallery-5.jpg" class="gallery_pic">
-                        <img src="assets/images/gallery-5.jpg" />
+                        <img src="assets/images/gallery-5.jpg" alt="gallery picture">
                         <svg>
                             <use xlink:href="assets/images/icons/sprite.svg#add_circle"></use>
                         </svg>
