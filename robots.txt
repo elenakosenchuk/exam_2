@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: elenakosenchuk.github.io
+Sitemap: https://elenakosenchuk.github.io/exam_2/sitemap.xml
