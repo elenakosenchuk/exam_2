@@ -23,6 +23,9 @@ function ValidateEmail(mail) {
 
 
 $(function () {
+
+    $('.lazy').Lazy();
+    $('.lazy-bg').Lazy();
     $("#inputName").on('focus', function () {
         $("#inputName").removeClass('error');
     });
@@ -208,6 +211,7 @@ $(function () {
           rotate: false
         }
     });
+    
 
     $("#init_map").on('click', function () {
         $(this).remove();

@@ -31,6 +31,8 @@ function ValidateEmail(mail) {
 
 ;
 $(function () {
+  $('.lazy').Lazy();
+  $('.lazy-bg').Lazy();
   $("#inputName").on('focus', function () {
     $("#inputName").removeClass('error');
   });
