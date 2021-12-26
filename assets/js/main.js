@@ -248,8 +248,8 @@ $(function () {
 
     $("#contact_form").on('submit', function (e) {
         e.preventDefault();
-        if (validateForm() == false) {
-            alert("Invalid form data!");
+        if (validateForm() == false) {           
+            panel.danger('Invalid form data!', true);
             return false;
         }
         // console.log("SEND FORM!");
@@ -264,8 +264,8 @@ $(function () {
             text +
             '&parse_mode=html', (json) => {
                 if (json.ok) {
-                    $("#contact_form").trigger('reset');
-                    alert("Message successfully send");
+                    $("#contact_form").trigger('reset');                    
+                    panel.success('Message successfully send', true);
                 } else {
                     alert(json.description);
                 }

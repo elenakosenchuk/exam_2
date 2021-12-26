@@ -830,6 +830,32 @@ img {
   opacity: 0.5;
 }
 
+#panel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 15%;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  padding: 30px 50px;
+  font-size: 20px;
+  z-index: 100000;
+}
+#panel.info {
+  background-color: rgba(0, 183, 255, 0.7);
+}
+#panel.success {
+  background-color: rgba(95, 224, 95, 0.9);
+}
+#panel.warning {
+  background-color: rgba(247, 181, 1, 0.993);
+}
+#panel.danger {
+  background-color: rgba(236, 11, 30, 0.9);
+}
+
 #footer {
   width: 100%;
   height: 550px;

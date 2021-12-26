@@ -200,7 +200,7 @@ $(function () {
     e.preventDefault();
 
     if (validateForm() == false) {
-      alert("Invalid form data!");
+      panel.danger('Invalid form data!', true);
       return false;
     } // console.log("SEND FORM!");
 
@@ -212,7 +212,7 @@ $(function () {
     $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
       if (json.ok) {
         $("#contact_form").trigger('reset');
-        alert("Message successfully send");
+        panel.success('Message successfully send', true);
       } else {
         alert(json.description);
       }

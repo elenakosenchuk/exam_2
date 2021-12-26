@@ -40,9 +40,10 @@
     <link rel="stylesheet" href="assets/plugins/light/css/lightslider.min.css">
     <link rel="stylesheet" href="assets/plugins/lightGallery/dist/css/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
+    <link rel="stylesheet" href="assets/plugins/panel/panel.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
-    <link rel="stylesheet" href="assets/plugins/panel/panel.min.css">
+
 </head>
 
 <body>
@@ -336,6 +337,7 @@
     <footer id="footer">
         <div class="footer_wrapper lazy-bg" data-src="assets/images/footer-bg.png">
             <div class="container">
+                <div id="panel"></div>
                 <div class="form_wrapper">
                     <div class="footer_form lazy-bg" data-src="assets/images/form-bg.png">
                         <div class="title">
@@ -366,8 +368,7 @@
                                             <svg>
                                                 <use xlink:href="assets/images/icons/sprite.svg#mail"></use>
                                             </svg>
-                                            <span itemprop="location address" itemscope
-                                                itemtype="https://schema.org/PostalAddress">montichello@service.com</span></a>
+                                            <span itemprop="email">montichello@service.com</span></a>
                                     </li>
                                     <li>
                                         <a class="data_link" href="#">
@@ -375,8 +376,9 @@
                                                 <use xlink:href="assets/images/icons/sprite.svg#clock"></use>
                                             </svg>
                                             <span itemprop="openingHoursSpecification" itemscope
-                                                itemtype="https://schema.org/OpeningHoursSpecification">From 07:05AM to
-                                                19:30PM</span></a>
+                                                itemtype="https://schema.org/OpeningHoursSpecification"><time
+                                                    itemprop="opens" datetime="07:05:00">From 07:05AM</time>to
+                                                <time itemprop="closes" datetime="19:30:00">19:30PM</time></span></a>
                                     </li>
 
                                 </ul>
