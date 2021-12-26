@@ -16,7 +16,12 @@
     font-size: 50px;
   }
   #footer .container .footer_form #contact_form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 90%;
     margin: 0 auto;
@@ -41,6 +46,7 @@
 
   #projects .projects-container .first_project .project_img {
     width: 45%;
+    -webkit-box-shadow: -150px -57px 0 0 #55b7ff;
     box-shadow: -150px -57px 0 0 #55b7ff;
   }
 
@@ -54,6 +60,7 @@
 
   #projects .projects-container .second_project .project_img {
     width: 45%;
+    -webkit-box-shadow: 150px -57px 0 0 #7e5aff;
     box-shadow: 150px -57px 0 0 #7e5aff;
   }
 }
@@ -75,11 +82,17 @@
   }
 
   #projects .projects-container .first_project {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin-bottom: 100px;
   }
 
   #projects .projects-container .second_project {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin-bottom: 100px;
   }
@@ -267,6 +280,9 @@
   }
 
   #footer .container .footer_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
   }
@@ -277,10 +293,12 @@
   }
 
   #projects .projects-container .first_project .project_img {
+    -webkit-box-shadow: -60px -30px 0 0 #55b7ff;
     box-shadow: -60px -30px 0 0 #55b7ff;
   }
 
   #projects .projects-container .second_project .project_img {
+    -webkit-box-shadow: 60px -30px 0 0 #7e5aff;
     box-shadow: 60px -30px 0 0 #7e5aff;
   }
 }

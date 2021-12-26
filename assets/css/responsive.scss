@@ -16,8 +16,13 @@
                 font-size: 50px;
             }
             #contact_form {
-                flex-direction: column;
-                justify-content: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
                 width: 90%;
                 margin: 0 auto;            
                 .contact-data {
@@ -42,7 +47,8 @@
     }  
     #projects .projects-container .first_project .project_img {
         width: 45%;
-        box-shadow: -150px -57px 0 0 #55b7ff;
+        -webkit-box-shadow: -150px -57px 0 0 #55b7ff;
+                box-shadow: -150px -57px 0 0 #55b7ff;
     }
     #projects .projects-container .first_project .project_content {
         width: 55%;
@@ -52,7 +58,8 @@
     }
     #projects .projects-container .second_project .project_img {
         width: 45%;
-        box-shadow: 150px -57px 0 0 #7e5aff;
+        -webkit-box-shadow: 150px -57px 0 0 #7e5aff;
+                box-shadow: 150px -57px 0 0 #7e5aff;
     }    
 }
 
@@ -70,11 +77,17 @@
         font-size: 60px;
     }
     #projects .projects-container .first_project {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         margin-bottom: 100px;
     }
     #projects .projects-container .second_project {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         margin-bottom: 100px; 
     }
     #projects .projects-container .first_project .project_img {
@@ -242,7 +255,10 @@
         }        
     } 
     #footer .container .footer_content {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         gap: 20px;        
     }  
 }
@@ -253,9 +269,11 @@
         display: none;
     }   
     #projects .projects-container .first_project .project_img {        
-        box-shadow: -60px -30px 0 0 #55b7ff;
+        -webkit-box-shadow: -60px -30px 0 0 #55b7ff;        
+                box-shadow: -60px -30px 0 0 #55b7ff;
     } 
     #projects .projects-container .second_project .project_img {        
-        box-shadow: 60px -30px 0 0 #7e5aff;
+        -webkit-box-shadow: 60px -30px 0 0 #7e5aff;        
+                box-shadow: 60px -30px 0 0 #7e5aff;
     }    
 }
